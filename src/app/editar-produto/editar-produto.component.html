@@ -1,3 +1,11 @@
 <p>
-  editar-produto works!
+  Edição de Produto!
 </p>
+
+<form (submit)="salvar()">
+  <input name="id" type="text" [(ngModel)]="produto.id"><br>
+  <input name="nome" type="text" [(ngModel)]="produto.nome">
+  <button>Salvar</button>
+</form>
+
+Div: <div [textContent]='debug'></div>

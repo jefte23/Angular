@@ -1,4 +1,3 @@
-import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { Component } from '@angular/core';
 import { Produto } from './produto';
 
