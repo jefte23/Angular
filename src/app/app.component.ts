@@ -13,11 +13,5 @@ export class AppComponent {
   title = 'app works!';
 
   constructor() {
-    // tslint:disable-next-line:prefer-const
-    let p = new Produto();
-    p.id = 1;
-    p.nome = 'Macarrão';
-    this.produtos.push(p);
-
   }
 }
