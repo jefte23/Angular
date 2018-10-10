@@ -1,4 +1,4 @@
-import { AppRoutingModule } from './app-routing.module';
+  import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,6 +10,8 @@ import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-latera
 import { ResumoComponent } from './resumo/resumo.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ConsultaPorEspecialidadeComponent } from './consulta/consulta-por-especialidade/consulta-por-especialidade.component';
+import { ResumoService } from './resumo/resumo.service';
+import { ConsultaService } from './consulta/consulta.service';
 
 
 
@@ -29,7 +31,7 @@ import { ConsultaPorEspecialidadeComponent } from './consulta/consulta-por-espec
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ResumoService, ConsultaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

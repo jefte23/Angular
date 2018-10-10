@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { ResumoService } from './resumo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,28 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumoComponent implements OnInit {
 
-  resumo = {
-      'consultas' : {
-      'consultas_30dias_anteiores' : 87,
-      'consultas_30dias_posteriores' : 79
-    },
-      'faturamento' : {
-      'anterior' : {
-      'valor' : 100000,
-      'comparativo' : 19
-      },
-      'previsao' : {
-      'valor' : 90000,
-      'comparativo' : -10
-      }
-    }
-  };
+  resumo;
+  inscricao;
 
-  constructor(private http: HttpClient) {
-    this.http.get('http://projeto.devmedia.com.br/php/api-dashboard/api/resumo');
-  }
+  constructor(private resumoService: ResumoService) {}
 
   ngOnInit() {
+    this.inscricao = this.resumoService.getResumo().subscribe(dados => this.resumo = dados);
+  }
+
+// tslint:disable-next-line:use-life-cycle-interface
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
   }
 
 }
