@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -24,7 +25,9 @@ export class ResumoComponent implements OnInit {
     }
   };
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.http.get('http://projeto.devmedia.com.br/php/api-dashboard/api/resumo');
+  }
 
   ngOnInit() {
   }
