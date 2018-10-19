@@ -1,0 +1,14 @@
+Preparando o ambiente
+
+Instale o NVM (Node Version Manager):
+
+proxy bash
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+Feche o terminal e abra novamente:
+
+proxy bash
+nvm install --lts
+Para conferir a versão instalada:
+
+node --version
+npm --version
